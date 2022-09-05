@@ -1,6 +1,6 @@
 # Firmware Core MCU libraries
 
-This repo is for the development of complete MCU configurations, and code intended to be loaded onto flight MCUs. All other development is done in the [firmware-testing](https://github.com/spacesys-finch/firmware-testing).
+This repo is for the development of complete MCU configurations, and code intended to be loaded onto flight MCUs. All other development is done in [firmware-dev](https://github.com/spacesys-finch/firmware-dev).
 
 There are two child folders in this repo:
 
