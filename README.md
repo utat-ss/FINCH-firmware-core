@@ -8,7 +8,14 @@ There are two child folders in this repo:
     - This is slightly different from the _STM32H743**ZIT6**_ (144 pins) with more pins. Unless the Imaging Architecture project is able to overcome some challenges with voltage level translation, this is likely the model that will be used.
 - [G431](G431/) holds a base MCU for the _STM32G431RBT6_, the 64-pin version of the G431. This is the general-purpose MCU used for OBC and ADCS.
 
-The `main` branch serves as a basis, and other branches are used for specific subsystems and rebased as needed. If you need to add another onboard MCU model, contact the Firmware lead.
+There are currently four main branches in the repo:
+
+- `main`: Base for all onboard MCUs. Core components shared across MCUs should be merged into this branch.
+- `ADCS-STM32G431RBT6`: ADCS G4-series microcontroller, for attitude control
+- `OBC-EPS-STM32G431RBT6`: OBC and EPS G4-series microcontroller, in charge of onboard control and CDH (command and data handling)
+- `PAY-STM32H743IIT6`: Payload Electronics H7-series microcontroller, for imaging
+
+If you need to add another onboard MCU model, contact the Firmware lead.
 
 ## How to use this repo (subsystem components)
 
@@ -19,7 +26,7 @@ The `main` branch serves as a basis, and other branches are used for specific su
     cd firmware-core
     ```
 
-2. Fork a branch for the subsystem MCU you're targeting. Continuing with our HT323 reaction wheel example, you'll be programming the ADCS G431 MCU, so fork from that branch, using a name including the component and target MCU:
+2. Fork a branch for the subsystem MCU you're targeting (or the `main` branch for common elements). Continuing with our HT323 reaction wheel example, you'll be programming the ADCS G431 MCU, so fork from that branch, using a name including the component and target MCU:
 
     ```bash
     git checkout ADCS-STM32G431RBT6
@@ -44,7 +51,7 @@ The `main` branch serves as a basis, and other branches are used for specific su
     ```bash
     git commit -m "Relevant commit message"
     git rebase ADCS-STM32G431RBT6
-    git push --force
+    git push --force-with-lease
     ```
 
 9. [Create a pull request](https://github.com/spacesys-finch/firmware-core/compare). The "base" branch will be the target (`ADCS-STM32G431RBT6`), and the "compare" will be your branch. Fill out the template and open the pull request.
