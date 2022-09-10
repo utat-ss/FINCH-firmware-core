@@ -15,7 +15,7 @@ There are currently four main branches in the repo:
 - `OBC-EPS-STM32G431RBT6`: OBC and EPS G4-series microcontroller, in charge of onboard control and CDH (command and data handling)
 - `PAY-STM32H743IIT6`: Payload Electronics H7-series microcontroller, for imaging
 
-In order to have a PR merged, it needs to be approved by at least two people in the @spacesys-finch/flight-mcu-approvers group.
+In order to have a PR merged, it needs to be approved by at least two people in the [@spacesys-finch/flight-mcu-approvers](https://github.com/orgs/spacesys-finch/teams/flight-mcu-approvers) group.
 
 ## How to use this repo (subsystem components)
 
