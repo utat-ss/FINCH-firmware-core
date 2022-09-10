@@ -15,7 +15,7 @@ There are currently four main branches in the repo:
 - `OBC-EPS-STM32G431RBT6`: OBC and EPS G4-series microcontroller, in charge of onboard control and CDH (command and data handling)
 - `PAY-STM32H743IIT6`: Payload Electronics H7-series microcontroller, for imaging
 
-If you need to add another onboard MCU model, contact the Firmware lead.
+In order to have a PR merged, it needs to be approved by at least two people in the @spacesys-finch/flight-mcu-approvers group.
 
 ## How to use this repo (subsystem components)
 
@@ -85,3 +85,11 @@ If you need to add another onboard MCU model, contact the Firmware lead.
     git commit -m "[ADCS-STM32G431RBT6] Initial commit"
     git push -u origin ADCS-STM32G431RBT6
     ```
+
+If you need to add another onboard MCU model, contact the Firmware lead. Make sure to enable [branch protection rules](https://github.com/spacesys-finch/firmware-core/settings/branches) as follows:
+
+- Require a pull request before merging
+    - Require approvals: **2**
+    - Dismiss stale pull request approvals where new commits are pushed
+- Require conversation resolution before merging
+- Require linear history
